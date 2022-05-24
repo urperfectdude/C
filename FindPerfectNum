@@ -1,0 +1,39 @@
+// C program to print all Perfect numbers within a given range 
+ 
+#include <stdio.h>
+
+int main()
+{
+    int x, y, sum;    //Declare variables 
+
+    /* Input lower and upper limit from user */
+    printf("Enter the starting element of the range : ");
+    scanf("%d", &x);    //Initialize the lower limit 
+    printf("Enter the ending element of the range : ");
+    scanf("%d", &y);    //Initialize the upper limit 
+
+    printf("All Perfect numbers between %d to %d:\n", x, y);
+    
+    /* Iterate within the range to check for all the perfect numbers */
+    for(int i=x; i<=y; i++)
+    {
+        sum = 0;    //Initialize the sum to zero for each element
+
+        /* Check whether the current number i is Perfect number or not */
+        for(int j=1; j<i; j++)
+        {
+            if(i % j == 0)
+            {
+                sum += j;
+            }
+        }
+ 
+        /* If the sum of all its factor is equal to the number itself then it is a perfect number */
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+    printf(" \n ");
+    return 0;
+}
